@@ -12,7 +12,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'testLib',
+      name: 'svgColorReplacer',
       fileName: 'index',
       formats: ['es', 'amd', 'umd', 'iife', 'cjs', 'esm']
     },

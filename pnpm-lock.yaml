@@ -12,7 +12,7 @@ importers:
         specifier: ~5.6.0
         version: 5.6.3
 
-  packages/test-lib:
+  packages/svg-color-replacer:
     devDependencies:
       '@babel/core':
         specifier: ^7.26.0
@@ -38,9 +38,9 @@ importers:
 
   playground/vue:
     dependencies:
-      '@packages/test-lib':
+      '@yugu/svg-color-replacer':
         specifier: workspace:*
-        version: link:../../packages/test-lib
+        version: link:../../packages/svg-color-replacer
       pinia:
         specifier: ^2.2.4
         version: 2.2.6(typescript@5.6.3)(vue@3.5.12(typescript@5.6.3))

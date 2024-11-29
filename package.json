@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev:test-lib": "pnpm --filter @packages/test-lib dev",
-    "build:test-lib": "pnpm --filter @packages/test-lib build",
-    "release:test-lib": "pnpm --filter @packages/test-lib release",
+    "dev:test-lib": "pnpm --filter @yugu/svg-color-replacer dev",
+    "build:test-lib": "pnpm --filter @yugu/svg-color-replacer build",
+    "release:test-lib": "pnpm --filter @yugu/svg-color-replacer release",
     "playground:vue": "pnpm --filter @playground/vue dev"
   },
   "keywords": [],

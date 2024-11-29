@@ -1,5 +1,5 @@
 {
-  "name": "@packages/test-lib",
+  "name": "@yugu/svg-color-replacer",
   "version": "1.0.0",
   "description": "测试lib",
   "main": "dist/index.js",

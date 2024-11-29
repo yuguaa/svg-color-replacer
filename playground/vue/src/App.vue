@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
-import testLib from '@packages/test-lib'
-console.log(`🚀 ~ testLib:`, testLib)
+import svgColorReplacer from '@yugu/svg-color-replacer'
+console.log(`🚀 ~ svgColorReplacer:`, svgColorReplacer)
 </script>
 
 <template>
