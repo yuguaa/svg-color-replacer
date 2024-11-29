@@ -1,26 +1,20 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import babel from '@rollup/plugin-babel'
-import dts from 'vite-plugin-dts'
 export default defineConfig({
-  plugins: [
-    dts({
-      tsconfigPath: './tsconfig.json',
-      outDir: 'dist/types'
-    })
-  ],
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
+      entry: resolve(__dirname, 'src/index.js'),
       name: 'svgColorReplacer',
       fileName: 'index',
       formats: ['es', 'amd', 'umd', 'iife', 'cjs', 'esm']
     },
     rollupOptions: {
+      external: ['parse5'],
       plugins: [
         babel({
           babelHelpers: 'bundled',
-          extensions: ['.js', '.ts'],
+          extensions: ['.js'],
           presets: [
             [
               '@babel/preset-env',

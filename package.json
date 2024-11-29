@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev:test-lib": "pnpm --filter @yugu/svg-color-replacer dev",
-    "build:test-lib": "pnpm --filter @yugu/svg-color-replacer build",
-    "release:test-lib": "pnpm --filter @yugu/svg-color-replacer release",
-    "playground:vue": "pnpm --filter @playground/vue dev"
+    "dev": "pnpm --filter @yugu/svg-color-replacer dev",
+    "build": "pnpm --filter @yugu/svg-color-replacer build",
+    "release": "pnpm --filter @yugu/svg-color-replacer release",
+    "playground": "pnpm --filter @playground/vue dev"
   },
   "keywords": [],
   "author": "",

@@ -1,87 +1,33 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+<template>
+  <div>
+    1111
+    <img class="svg" src="" alt="" />
+  </div>
+</template>
+<script setup>
 import svgColorReplacer from '@yugu/svg-color-replacer'
 console.log(`🚀 ~ svgColorReplacer:`, svgColorReplacer)
+import { onMounted } from 'vue'
+// import { parse, serialize } from 'parse5'
+
+onMounted(() => {
+  fetch('http://172.16.31.117:9000/web-static/assets/rtr/images/live_manage_new.svg')
+    .then(res => res.text())
+    .then(data => {
+      console.log(`🚀 ~ data:`, data)
+      const newSvgString = svgColorReplacer({
+        svgString: data,
+        defaultReplaceColor: '#f00',
+        ignoreAttrs: [],
+        ignoreElements: [],
+        ignoreColors: []
+      })
+      console.log(`🚀 ~ newSvgString:`, newSvgString)
+      const blob = new Blob([newSvgString], { type: 'image/svg+xml' })
+      const url = URL.createObjectURL(blob)
+      const svgImg = document.querySelector('.svg')
+      svgImg.src = url
+    })
+})
 </script>
-
-<template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
-</template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-</style>
+<style scoped lang="less"></style>
