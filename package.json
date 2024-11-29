@@ -1,0 +1,18 @@
+{
+  "name": "npm-lib-monorepo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:test-lib": "pnpm --filter @packages/test-lib dev",
+    "build:test-lib": "pnpm --filter @packages/test-lib build",
+    "release:test-lib": "pnpm --filter @packages/test-lib release",
+    "playground:vue": "pnpm --filter @playground/vue dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "~5.6.0"
+  }
+}
