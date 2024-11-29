@@ -1,3 +1,4 @@
+```html
 <template>
   <div>
     1111
@@ -12,7 +13,6 @@ onMounted(() => {
   fetch('http://172.16.31.117:9000/web-static/assets/rtr/images/live_manage_new.svg')
     .then(res => res.text())
     .then(data => {
-      console.log(`🚀 ~ data:`, data)
       const newSvgString = svgColorReplacer({
         svgString: data,
         defaultReplaceColor: '#f00',
@@ -29,3 +29,4 @@ onMounted(() => {
 })
 </script>
 <style scoped lang="less"></style>
+```
