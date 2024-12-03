@@ -10,7 +10,7 @@ const traverse = (ast, cb) => {
   }
 }
 const isColor = hex => {
-  return /^#[0-9A-F]{6}$/i.test(hex)
+  return /^#[0-9A-F]{6}$/i.test(hex) || /^#[0-9A-F]{3}$/i.test(hex)
 }
 const findBody = ast => {
   let body = null
