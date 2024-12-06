@@ -26,11 +26,15 @@ const svgColorReplacer = ({
   defaultReplaceColor,
   ignoreAttrs = [],
   ignoreElements = [],
-  ignoreColors = []
+  ignoreColors = [],
+  replaceColorMap = {}
 }) => {
   // 检查必传参数 svgString 和 defaultReplaceColor 是否存在
   if (!svgString || !defaultReplaceColor) {
     throw new Error('svgString 和 defaultReplaceColor 是必传参数')
+  }
+  if (!isColor(defaultReplaceColor)) {
+    throw new Error('defaultReplaceColor 必须是颜色值')
   }
   // 解析 SVG 字符串为 AST
   const ast = parse(svgString)
@@ -43,7 +47,7 @@ const svgColorReplacer = ({
         node.attrs.forEach(attr => {
           // 打印属性值和是否为颜色值
           if (!ignoreAttrs.includes(attr.name) && isColor(attr.value) && !ignoreColors.includes(attr.value)) {
-            attr.value = defaultReplaceColor
+            attr.value = replaceColorMap[attr.value] || defaultReplaceColor
           }
         })
       }

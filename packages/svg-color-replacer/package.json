@@ -20,9 +20,23 @@
     "build": "vite build",
     "release": "bumpp package.json --commit --push --tag && pnpm publish --access public"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "svg",
+    "color",
+    "replacer",
+    "parse5",
+    "ast"
+  ],
+  "author": "yugu",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuguaa/svg-color-replacer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yuguaa/svg-color-replacer/issues"
+  },
+  "homepage": "https://github.com/yuguaa/svg-color-replacer/blob/master/packages/svg-color-replacer/README.md",
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",
