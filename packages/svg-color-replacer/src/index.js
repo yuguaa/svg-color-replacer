@@ -1,5 +1,5 @@
 import { parse, serialize } from 'parse5'
-
+import chroma from 'chroma-js'
 const traverse = (ast, cb) => {
   // 遍历ast，替换颜色
   if (ast.childNodes) {
@@ -9,9 +9,8 @@ const traverse = (ast, cb) => {
     })
   }
 }
-const isColor = hex => {
-  return /^#[0-9A-Fa-f]{6}$/i.test(hex) || /^#[0-9A-Fa-f]{3}$/i.test(hex)
-}
+
+const isColor = hex => chroma.valid(hex)
 const findBody = ast => {
   let body = null
   traverse(ast, node => {

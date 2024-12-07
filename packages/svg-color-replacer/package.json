@@ -25,7 +25,8 @@
     "color",
     "replacer",
     "parse5",
-    "ast"
+    "ast",
+    "chroma-js"
   ],
   "author": "yugu",
   "license": "MIT",
@@ -47,6 +48,7 @@
     "vite-plugin-dts": "^4.3.0"
   },
   "dependencies": {
+    "chroma-js": "^3.1.2",
     "parse5": "^7.2.1"
   }
 }
