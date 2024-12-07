@@ -10,7 +10,7 @@ export default defineConfig({
       formats: ['es', 'amd', 'umd', 'iife', 'cjs', 'esm']
     },
     rollupOptions: {
-      external: ['parse5'],
+      external: ['parse5', 'chroma-js'],
       plugins: [
         babel({
           babelHelpers: 'bundled',

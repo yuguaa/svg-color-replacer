@@ -14,13 +14,13 @@ onMounted(() => {
     .then(data => {
       const newSvgString = svgColorReplacer({
         svgString: data,
-        defaultReplaceColor: '#f00',
+        defaultReplaceColor: 'red',
         ignoreAttrs: [],
         ignoreElements: [],
         ignoreColors: [],
         replaceColorMap: {
-          '#34495e': '#00f',
-          '#41b883': '#0f0'
+          // '#34495e': '#00f',
+          // '#41b883': '#0f0'
         }
       })
       console.log(`🚀 ~ newSvgString:`, newSvgString)
