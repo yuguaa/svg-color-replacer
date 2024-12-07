@@ -1,10 +1,53 @@
-# npm-lib-monorepo 
-项目包介绍：
-功能： 能根据主题色，来动态改变SVG图颜色
-使用方法：
-  1.接收参数
- |参数|类型|描述|
- |----|----|----|
- |SVG图标|styring|需要改变颜色的SVG图|
- |颜色|string|暂只接受16进制的颜色传入|
- |
+ # 项目包介绍：
+ 
+- 项目包介绍：
+功能：能够依据主题色对 SVG 图颜色进行动态变换，使 SVG 图在不同主题场景下呈现出相应的色彩风格，有效提升项目的视觉适应性与灵活性。
+- 使用方法：
+接收参数：
+| 参数 | 类型 | 是否必填 | 描述 |
+| :----: | :----: | :----: | :---- |
+| svgString | string | 是 | 代表需进行颜色更改的 SVG 图的字符串数据，是整个颜色替换操作的基础素材。 |
+| defaultReplaceColor | string | 是 | 确定要将 SVG 图中原有的颜色替换成的目标颜色，当前仅支持 16 进制颜色格式，如 #000000 等。 |
+| ignoreAttrs | Array | 否 | 其中的元素为在颜色替换时要被忽略的 SVG 图属性名称，以此精准控制特定属性颜色不被修改。 |
+| ignoreElements | array | 否 | 用于指定在颜色替换过程中需跳过颜色更改的 SVG 图节点，确保某些节点颜色维持原状。 |
+| ignoreColors | array | 否 | 当存在特定颜色值无需替换时，将这些颜色值组成数组传入，从而实现对特定颜色的保留。 |
+| replaceColorMap | object | 否 | 通过对象的键值对设定特定颜色到目标颜色的映射关系，实现个性化颜色替换策略。 |
+
+## 安装
+
+```
+$ npm i -D @yugu/svg-color-replacer
+
+# or
+
+$ yarn add  -D @yugu/svg-color-replacer
+```
+## 使用
+
+```
+<template>
+  <div>
+    <img class="svg" src="" alt="" />
+  </div>
+</template>
+<script setup>
+import svgColorReplacer from '@yugu/svg-color-replacer'
+import { onMounted } from 'vue'
+
+onMounted(() => {
+  fetch('/logo.svg')
+    .then(res => res.text())
+    .then(data => {
+      const newSvgString = svgColorReplacer({
+        svgString: data,
+        defaultReplaceColor: '#00f',
+      })
+      const blob = new Blob([newSvgString], { type: 'image/svg+xml' })
+      const url = URL.createObjectURL(blob)
+      const svgImg = document.querySelector('.svg')
+      svgImg.src = url
+    })
+})
+</script>
+
+```
