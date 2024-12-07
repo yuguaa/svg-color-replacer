@@ -15,11 +15,11 @@
 ## 安装
 
 ```
-$ npm i -D @yugu/svg-color-replacer
+$ npm i @yugu/svg-color-replacer
 
 # or
 
-$ yarn add  -D @yugu/svg-color-replacer
+$ yarn add @yugu/svg-color-replacer
 ```
 ## 使用
 
