@@ -10,6 +10,7 @@
 |  ignoreElements  | array | 否 | 数组类型，用于指定在颜色替换过程中需跳过颜色更改的 SVG 图节点，确保某些节点颜色维持原状。 |
 |  ignoreColors  | array | 否 | 当存在特定颜色值无需替换时，将这些颜色值组成数组传入，从而实现对特定颜色的保留。 |
 |  replaceColorMap  | object | 否 | 接收一个对象，通过对象的键值对设定特定颜色到目标颜色的映射关系，实现个性化颜色替换策略。 |
+ 
 ## 安装
 
 ```
@@ -21,6 +22,7 @@ $ yarn add @yugu/svg-color-replacer
 ```
 ## 使用
 1. 以下是在 Vue 项目中使用该项目包的示例代码
+
 ```
 <template>
   <div>
