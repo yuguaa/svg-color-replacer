@@ -14,7 +14,7 @@
     "pinia": "^2.2.4",
     "vue": "^3.5.12",
     "vue-router": "^4.4.5",
-    "@yugu/svg-color-replacer": "workspace:*"
+    "@yugu/svg-color-replacer": "^0.0.8"
   },
   "devDependencies": {
     "@tsconfig/node20": "^20.1.4",
